@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* container with default class */
+.container {
+  @apply mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24;
+}
