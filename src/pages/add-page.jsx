@@ -1,10 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddPage = () => {
   const [players, setPlayers] = useState([]);
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const inputData = useRef();
+  const countInput = useRef();
   const addPlayer = () => {
     setPlayers([...players, inputData.current.value]);
     localStorage.setItem(
@@ -18,6 +21,29 @@ const AddPage = () => {
     const newP = players.filter((item) => item !== p);
     setPlayers(newP);
     localStorage.setItem("players", JSON.stringify(newP));
+  };
+
+  const randomFn = () => {
+    if (countInput.current.value) {
+      const shuffledPlayers = players.sort(() => Math.random() - 0.5);
+      let n = Math.floor(shuffledPlayers.length / countInput.current.value);
+      const teams = [];
+
+      for (let i = 0; i < n; i++) {
+        if (n - 1 === i) {
+          let arr = shuffledPlayers.slice(i * n);
+          teams.push(arr);
+        } else {
+          let arr = shuffledPlayers.slice(i * n, n * (i + 1));
+          teams.push(arr);
+        }
+      }
+
+      localStorage.setItem("teams", JSON.stringify(teams));
+      navigate("/about");
+    } else {
+      alert("Guruhlardagi o'yinchilar sonini kiriting");
+    }
   };
 
   useEffect(() => {
@@ -64,9 +90,23 @@ const AddPage = () => {
               </ul>
             ))}
 
-            <button className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white mb-4 mt-8">
-              Random
-            </button>
+            <div className="flex items-center mb-4 mt-8 gap-x-2">
+              <p className="text-white leading-4">
+                Guruhlar <br /> soni:
+              </p>
+              <input
+                type="num"
+                min="2"
+                ref={countInput}
+                className="w-[50px] text-center py-2 px-4 rounded-lg bg-white outline-0 border-0"
+              />
+              <button
+                onClick={randomFn}
+                className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white"
+              >
+                Random
+              </button>
+            </div>
           </div>
         </div>
       </div>
