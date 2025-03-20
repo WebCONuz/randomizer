@@ -27,14 +27,19 @@ const AddPage = () => {
     if (countInput.current.value) {
       const shuffledPlayers = players.sort(() => Math.random() - 0.5);
       let n = Math.floor(shuffledPlayers.length / countInput.current.value);
+      console.log(n);
+
       const teams = [];
 
       for (let i = 0; i < n; i++) {
         if (n - 1 === i) {
-          let arr = shuffledPlayers.slice(i * n);
+          let arr = shuffledPlayers.slice(i * countInput.current.value);
           teams.push(arr);
         } else {
-          let arr = shuffledPlayers.slice(i * n, n * (i + 1));
+          let arr = shuffledPlayers.slice(
+            i * countInput.current.value,
+            countInput.current.value * (i + 1)
+          );
           teams.push(arr);
         }
       }
