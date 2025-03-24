@@ -2,17 +2,12 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "../components/main/header";
 import { useNavigate } from "react-router-dom";
-import Draggable from "react-draggable";
 
 const StadiumPage = () => {
   const [reserve, setReserve] = useState([]);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [activePlayers, setActivePlayers] = useState([]);
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-
-  const handleDrag = (e, data) => {
-    setPosition({ x: data.x, y: data.y });
-  };
 
   const randomFn = () => {
     console.log("+++");
@@ -27,7 +22,8 @@ const StadiumPage = () => {
   };
 
   useEffect(() => {
-    const active = JSON.parse(localStorage.getItem("activeCommands"));
+    const active = JSON.parse(localStorage.getItem("activeCommands")) || [];
+    setActivePlayers(active);
     const noActive = JSON.parse(localStorage.getItem("noActiveCommand")) || [];
     setReserve(noActive);
   }, []);
@@ -41,33 +37,44 @@ const StadiumPage = () => {
               {t("pages.stadium.title")}
             </h1>
 
-            {/* <Draggable bounds="parent"> */}
             <div className="w-[60%] relative mx-auto mb-6">
+              <div className="absolute left-1/4 top-1/2 -translate-y-1/2 flex flex-col gap-y-4">
+                {activePlayers?.[0]?.map((item, i) => (
+                  <div
+                    key={i + 7 + Math.random()}
+                    className="flex flex-col items-center"
+                  >
+                    <img
+                      src="/images/player1.png"
+                      alt="player-1"
+                      className="w-12"
+                    />
+                    <p className="text-white font-medium">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute right-1/4 top-1/2 -translate-y-1/2 flex flex-col gap-y-4">
+                {activePlayers?.[1]?.map((item, i) => (
+                  <div
+                    key={i + 7 + Math.random()}
+                    className="flex flex-col items-center"
+                  >
+                    <img
+                      src="/images/player2.webp"
+                      alt="player-1"
+                      className="w-12"
+                    />
+                    <p className="text-white font-medium">{item}</p>
+                  </div>
+                ))}
+              </div>
               <img
                 src="/images/station.jpg"
                 alt="stadium"
                 className="w-full rounded-2xl"
               />
-
-              {/* <Draggable onDrag={handleDrag}>
-                  <div
-                    style={{
-                      width: "200px",
-                      height: "100px",
-                      background: "lightcoral",
-                      padding: "20px",
-                      textAlign: "center",
-                      cursor: "move",
-                    }}
-                  >
-                    Drag Me!
-                    <p>
-                      X: {position.x}, Y: {position.y}
-                    </p>
-                  </div>
-                </Draggable> */}
             </div>
-            {/* </Draggable> */}
 
             <div className="p-3 backdrop-blur-2xl bg-[#ffffff23] rounded-xl mb-5">
               {reserve.map((item, index) => (
@@ -80,7 +87,12 @@ const StadiumPage = () => {
                   </li>
                   <li className="py-2 px-4 flex-grow text-white flex gap-x-2">
                     {item.map((play, inx) => (
-                      <span key={inx + 10 + Math.random()}>{play},</span>
+                      <span
+                        key={inx + 10 + Math.random()}
+                        className="py-[2px] px-2 rounded-lg bg-[#ffffff2b]"
+                      >
+                        {play}
+                      </span>
                     ))}
                   </li>
                 </ul>
