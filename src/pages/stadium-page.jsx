@@ -26,6 +26,7 @@ const StadiumPage = () => {
     setActivePlayers(active);
     const noActive = JSON.parse(localStorage.getItem("noActiveCommand")) || [];
     setReserve(noActive);
+    console.log("+++");
   }, []);
   return (
     <main className="min-h-[calc(100vh-64px-188px)] py-4">
