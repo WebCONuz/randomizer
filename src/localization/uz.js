@@ -1,29 +1,37 @@
 export const uzData = {
   header: {
-    logo: "LOGOTIP",
-    nav: {
-      item1: "Bosh sahifa",
-      item2: "Biz haqimizda",
-      item3: "Qo‘llab-quvvatlash",
-      item4: "Yordam",
-    },
     select: "Tilni tanlang",
   },
   pages: {
-    home: {
-      title: "Bosh sahifa",
+    add: {
+      title: "O'yinchi qo'shish",
+      placeholder: "Yangi o'yinchi qo'shish",
+      button: {
+        create: "Yaratish",
+        delete: "O'chirish",
+        random: "Tasodifiy",
+      },
+      label: "Har bir guruhdagi o'yinchilar soni:",
     },
-    about: {
-      title: "Biz haqimizda",
+    groups: {
+      title: "Barcha guruhlar",
+      table_name: "Guruh",
+      button: {
+        reset: "Qayta aralashtirish",
+        next: "Keyingi bosqich",
+      },
     },
-    support: {
-      title: "Qo‘llab-quvvatlash sahifasi",
-    },
-    help: {
-      title: "Yordam sahifasi",
+    stadium: {
+      title: "Stadion",
     },
   },
   footer: {
-    text: "Pastki qatlam",
+    text: "Pastki qism",
+    group: "Zaxira",
+    button: {
+      add: "O'yinchi qo'shish",
+      group: "Barcha guruhlar",
+      start: "Boshlash",
+    },
   },
 };

@@ -1,19 +1,25 @@
 export const enData = {
   header: {
-    logo: "LOGO",
-    nav: {
-      item1: "Add Player",
-      item2: "Groups",
-      item3: "Stadium",
-    },
     select: "Select Lang",
   },
   pages: {
     add: {
       title: "Add Player",
+      placeholder: "Add new player",
+      button: {
+        create: "Create",
+        delete: "Delete",
+        random: "Random",
+      },
+      label: "Number of players in each group:",
     },
     groups: {
       title: "All groups",
+      table_name: "Group",
+      button: {
+        reset: "Re-Random",
+        next: "Next Step",
+      },
     },
     stadium: {
       title: "Stadium",
@@ -21,5 +27,11 @@ export const enData = {
   },
   footer: {
     text: "Footer",
+    group: "Reserve",
+    button: {
+      add: "Add player",
+      group: "All groups",
+      start: "Start",
+    },
   },
 };

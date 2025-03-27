@@ -1,29 +1,37 @@
 export const ruData = {
   header: {
-    logo: "ЛОГО",
-    nav: {
-      item1: "Главная",
-      item2: "О нас",
-      item3: "Поддержка",
-      item4: "Помощь",
-    },
-    select: "Выберите язык",
+    select: "Выбрать язык",
   },
   pages: {
-    home: {
-      title: "Главная страница",
+    add: {
+      title: "Добавить игрока",
+      placeholder: "Добавить нового игрока",
+      button: {
+        create: "Создать",
+        delete: "Удалить",
+        random: "Случайный",
+      },
+      label: "Количество игроков в каждой группе:",
     },
-    about: {
-      title: "О нас",
+    groups: {
+      title: "Все группы",
+      table_name: "Группа",
+      button: {
+        reset: "Перемешать",
+        next: "Следующий шаг",
+      },
     },
-    support: {
-      title: "Страница поддержки",
-    },
-    help: {
-      title: "Страница помощи",
+    stadium: {
+      title: "Стадион",
     },
   },
   footer: {
     text: "Футер",
+    group: "Запас",
+    button: {
+      add: "Добавить игрока",
+      group: "Все группы",
+      start: "Начать",
+    },
   },
 };
