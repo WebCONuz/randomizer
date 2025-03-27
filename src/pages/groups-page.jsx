@@ -88,13 +88,13 @@ const GroupPage = () => {
               <div className="flex gap-x-2">
                 <button
                   onClick={resetFn}
-                  className="outline-none border-none rounded-lg py-2 px-6 bg-gray-700 text-white"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 text-sm sm:text-base bg-gray-700 text-white"
                 >
                   {t("pages.groups.button.reset")}
                 </button>
                 <button
                   onClick={randomFn}
-                  className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 text-sm sm:text-base bg-green-700 text-white"
                 >
                   {t("pages.groups.button.next")}
                 </button>

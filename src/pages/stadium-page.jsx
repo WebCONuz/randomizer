@@ -86,12 +86,12 @@ const StadiumPage = () => {
                   {reserve.map((item, index) => (
                     <ul
                       key={index + 5 + Math.random()}
-                      className="flex border border-white min-w-[400px]"
+                      className="flex border border-white w-full sm:w-[400px]"
                     >
                       <li className="w-[100px] py-2 text-center text-white border-r border-white">
                         {t("pages.stadium.group")} {index + 1}
                       </li>
-                      <li className="py-2 px-4 flex-grow text-white flex gap-x-2">
+                      <li className="py-2 px-2 sm:px-4 w-[calc(100%-100px)] text-white flex flex-wrap gap-y-1 gap-x-2">
                         {item.map((play, inx) => (
                           <span
                             key={inx + 10 + Math.random()}
@@ -109,19 +109,19 @@ const StadiumPage = () => {
               <div className="flex gap-x-2">
                 <button
                   onClick={goHome}
-                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-gray-700 text-white text-sm"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-gray-700 text-white text-sm sm:text-base"
                 >
                   {t("pages.stadium.button.add")}
                 </button>
                 <button
                   onClick={goGroups}
-                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-blue-700 text-white text-sm"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-blue-700 text-white text-sm sm:text-base"
                 >
                   {t("pages.stadium.button.group")}
                 </button>
                 <button
                   onClick={randomFn}
-                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-green-700 text-white text-sm"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-green-700 text-white text-sm sm:text-base"
                 >
                   {t("pages.stadium.button.start")}
                 </button>

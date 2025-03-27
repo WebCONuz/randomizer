@@ -11,12 +11,14 @@ const AddPage = () => {
   const countInput = useRef();
 
   const addPlayer = () => {
-    setPlayers([...players, inputData.current.value]);
-    localStorage.setItem(
-      "players",
-      JSON.stringify([...players, inputData.current.value])
-    );
-    inputData.current.value = "";
+    if (inputData.current.value !== "") {
+      setPlayers([...players, inputData.current.value]);
+      localStorage.setItem(
+        "players",
+        JSON.stringify([...players, inputData.current.value])
+      );
+      inputData.current.value = "";
+    }
   };
 
   const removePlayer = (p) => {
@@ -71,6 +73,7 @@ const AddPage = () => {
                 <input
                   type="text"
                   ref={inputData}
+                  maxLength="60"
                   className="outline-none border-none rounded-l-lg py-2 px-4 w-full sm:w-[350px] bg-white mb-4"
                   placeholder={t("pages.add.placeholder")}
                 />
@@ -112,11 +115,11 @@ const AddPage = () => {
                   type="num"
                   min="2"
                   ref={countInput}
-                  className="w-[50px] text-center py-2 px-4 rounded-lg bg-white outline-0 border-0"
+                  className="w-[50px] text-center py-[6px] sm:py-2 px-4 sm:px-6 text-sm sm:text-base rounded-lg bg-white outline-0 border-0"
                 />
                 <button
                   onClick={randomFn}
-                  className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white"
+                  className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 text-sm sm:text-base bg-green-700 text-white"
                 >
                   {t("pages.add.button.random")}
                 </button>
