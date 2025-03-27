@@ -72,13 +72,13 @@ const AddPage = () => {
                   type="text"
                   ref={inputData}
                   className="outline-none border-none rounded-l-lg py-2 px-4 w-full sm:w-[350px] bg-white mb-4"
-                  placeholder="Add new player"
+                  placeholder={t("pages.add.placeholder")}
                 />
                 <button
                   onClick={addPlayer}
                   className="outline-none font-semibold border-none rounded-r-lg py-2 px-4 bg-gray-400 mb-4"
                 >
-                  Create
+                  {t("pages.add.button.create")}
                 </button>
               </div>
 
@@ -97,7 +97,7 @@ const AddPage = () => {
                         onClick={() => removePlayer(item)}
                         className="ounline-0 border-0 rounded-lg py-1 px-2 text-xs font-medium bg-red-200 text-red-600"
                       >
-                        Delete
+                        {t("pages.add.button.delete")}
                       </button>
                     </li>
                   </ul>
@@ -105,10 +105,8 @@ const AddPage = () => {
               </div>
 
               <div className="flex items-center mb-4 mt-8 gap-x-2">
-                <p className="text-white leading-5">
-                  Har bir guruhdagi
-                  <br />
-                  o'yinchilar soni:
+                <p className="text-white leading-5 max-w-[130px]">
+                  {t("pages.add.label")}
                 </p>
                 <input
                   type="num"
@@ -120,7 +118,7 @@ const AddPage = () => {
                   onClick={randomFn}
                   className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white"
                 >
-                  Random
+                  {t("pages.add.button.random")}
                 </button>
               </div>
             </div>

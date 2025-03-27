@@ -23,15 +23,12 @@ export const uzData = {
     },
     stadium: {
       title: "Stadion",
-    },
-  },
-  footer: {
-    text: "Pastki qism",
-    group: "Zaxira",
-    button: {
-      add: "O'yinchi qo'shish",
-      group: "Barcha guruhlar",
-      start: "Boshlash",
+      group: "Zaxira",
+      button: {
+        add: "O'yinchi qo'shish",
+        group: "Barcha guruhlar",
+        start: "Boshlash",
+      },
     },
   },
 };

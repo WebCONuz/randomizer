@@ -73,7 +73,7 @@ const GroupPage = () => {
                   >
                     <div className="p-3 backdrop-blur-2xl bg-[#ffffff41] rounded-xl">
                       <h3 className="text-white font-bold mb-2 py-2 text-center bg-[#ffffff2e] rounded-lg">
-                        {index + 1} GURUH
+                        {t("pages.groups.table_name")} {index + 1}
                       </h3>
                       {item.map((player, inx) => (
                         <p key={inx} className="text-lg text-[#ffffffd3] mb-2">
@@ -90,13 +90,13 @@ const GroupPage = () => {
                   onClick={resetFn}
                   className="outline-none border-none rounded-lg py-2 px-6 bg-gray-700 text-white"
                 >
-                  Qayta random
+                  {t("pages.groups.button.reset")}
                 </button>
                 <button
                   onClick={randomFn}
                   className="outline-none border-none rounded-lg py-2 px-6 bg-green-700 text-white"
                 >
-                  Boshlash
+                  {t("pages.groups.button.next")}
                 </button>
               </div>
             </div>

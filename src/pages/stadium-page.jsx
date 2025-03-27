@@ -89,7 +89,7 @@ const StadiumPage = () => {
                       className="flex border border-white min-w-[400px]"
                     >
                       <li className="w-[100px] py-2 text-center text-white border-r border-white">
-                        Zahira {index + 1}
+                        {t("pages.stadium.group")} {index + 1}
                       </li>
                       <li className="py-2 px-4 flex-grow text-white flex gap-x-2">
                         {item.map((play, inx) => (
@@ -111,19 +111,19 @@ const StadiumPage = () => {
                   onClick={goHome}
                   className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-gray-700 text-white text-sm"
                 >
-                  O'yinchi qo'shish
+                  {t("pages.stadium.button.add")}
                 </button>
                 <button
                   onClick={goGroups}
                   className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-blue-700 text-white text-sm"
                 >
-                  Guruhlar
+                  {t("pages.stadium.button.group")}
                 </button>
                 <button
                   onClick={randomFn}
                   className="outline-none border-none rounded-lg py-[6px] sm:py-2 px-4 sm:px-6 bg-green-700 text-white text-sm"
                 >
-                  Random
+                  {t("pages.stadium.button.start")}
                 </button>
               </div>
             </div>

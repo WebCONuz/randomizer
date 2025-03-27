@@ -23,15 +23,12 @@ export const enData = {
     },
     stadium: {
       title: "Stadium",
-    },
-  },
-  footer: {
-    text: "Footer",
-    group: "Reserve",
-    button: {
-      add: "Add player",
-      group: "All groups",
-      start: "Start",
+      group: "Reserve",
+      button: {
+        add: "Add player",
+        group: "All groups",
+        start: "Start",
+      },
     },
   },
 };

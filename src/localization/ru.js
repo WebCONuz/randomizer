@@ -23,15 +23,12 @@ export const ruData = {
     },
     stadium: {
       title: "Стадион",
-    },
-  },
-  footer: {
-    text: "Футер",
-    group: "Запас",
-    button: {
-      add: "Добавить игрока",
-      group: "Все группы",
-      start: "Начать",
+      group: "Запас",
+      button: {
+        add: "Добавить игрока",
+        group: "Все группы",
+        start: "Начать",
+      },
     },
   },
 };
